@@ -18,20 +18,20 @@
      return (
         <div className="post">
             <div className="post__avatar">
-                <Avatar src="" />
+                <Avatar src={avatar} />
             </div> 
             <div className="post__body">
                 <div className="post__header">
                     <div className="post__headerText">
                         <h3>
-                            Monia Kamly <span className="post__headerSpecial">@moniakam <VerifiedUserIcon className="post__badge"></VerifiedUserIcon> </span>
+                            {displayName} <span className="post__headerSpecial"> @{username} {verified && <VerifiedUserIcon className="post__badge" />} </span>
                         </h3>
                     </div>
                     <div className="post__headerDescription">
-                        <p>I challenge you to build a Twitter clone with React  </p>
+                        <p>{text} </p>
                     </div>
                 </div>    
-                <img src="https://media1.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif" alt=""></img> 
+                <img src={image} alt=""></img> 
                 <div className="post__footer">
                     <ChatBubbleOutlineIcon fontSize="small" />
                     <RepeatIcon fontSize="small" />
