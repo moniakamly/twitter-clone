@@ -12,11 +12,12 @@ function TweetBox() {
         e.preventDefault();
         db.collection('posts').add({
             displayName: "Monia Kamly",
-            username: "moniakam",
+            username: "moniakamli",
             verified: true,
             text: tweetMessage,
             image: tweetImage,
-            avatar: "",
+            avatar: "./src/photoprofil.jpg",
+            date: new Date(),
         });
 
         setTweetImage(""); 

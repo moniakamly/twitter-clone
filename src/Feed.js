@@ -3,6 +3,7 @@ import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
 import db from "./firebase";
+import FlipMove from 'react-flip-move';
 
 
 function Feed() {
@@ -19,25 +20,31 @@ function Feed() {
             <h2>Home</h2>
             </div>
 
+            {console.log(posts)}
             <TweetBox />
 
+            {/*FlipMOve is an animation library for the posts*/}
+            <FlipMove>
             {posts.map(post => (
                 <Post 
+                date={post.date}
+                key={post.text}
                 displayName={post.displayName} 
                 username={post.username}
                 verified={post.verified} 
                 text={post.text}
                 avatar={post.avatar}
                 image={post.image}/>
-            ))}
+            )).sort((a,b) => a.date > b.date)}
+            </FlipMove>
 
-            <Post 
+            {/* <Post 
             displayName="Monia Kamly" 
             username="moniakam" 
             verified={true} 
             text="Yoo it's working"
             avatar=""
-            image="https://media1.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif"/>
+            image="https://media1.giphy.com/media/BpGWitbFZflfSUYuZ9/giphy.gif"/> */}
         
         </div>
     )
